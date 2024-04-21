@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" type="text/css" href = "index.css" />
+
+    </head>
+    <body>
+        <nav class ="parentframe">
+            <div class = "navframe">
+                <ul>
+                    <li><a href="exchange.html">Exchange</a></li>
+                    <li><a href="tradingMkt.html">Trading Market</a></li>
+                    <li><a href="rate.html">Rate</a></li>
+                    <li><a href="financialInst.html">Financial Instruments</a></li>
+                    <li><a href="underlying.html">Underlying</a></li>
+                    <!-- <li><a href="histPrice.html">Historical Price</a></li> -->
+                    <li><a href="option.html">Option</a></li>
+                    <li><a href="trade.html">Trade</a></li>
+                    <li><a href="optionTradeEval.html">Option Trade Evaluation</a></li>
+                </ul>
+            </div>
+
+
+        </nav>
+
+
+        <div class = "Rate">
+            <table id = interest_rate >
+                <tr>
+                    <th> ID</th>
+                    <th> Rate term (in years)</th>
+                    <th> Rate </th>
+                    <th> Measure Date </th>
+
+                </tr>
+                <tr>
+                    <!-- those need to be input by user and save in database (ID is auto polulate)-->
+                    <td id="rate_id">01</td>
+                    <td id = "rate_term">1.5</td>
+                    <td id="rate">0.02</td>
+                    <td id="measure_date">02/02/22</td>
+                    
+                </tr>
+                
+
+            </table>
+
+            <br>
+            <form>
+                <label for="rate_term">Rate term(in years)</lable>
+                <input type="double" id="rate_term" />
+                <label for="Rate">Rate(in decimal) </lable>
+                <input type="double" id="rate" />
+                <label for="rate_id">Rate ID</lable>
+                <input type="int" id="rate_id" />
+                <label for="measure_date">Measure Date</label>
+                <input type="date" id="measure_date" />
+                <input type="submit" value="Submit">
+
+            </form>
+
+        </div>
+    </body>
+
+    <script> scr="index.js"</script>
+</html>

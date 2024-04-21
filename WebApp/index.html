@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="Calculation" type ="text/css", href="index.css"/>
+        <meta charset="UTF-8">
+        <meta name="Option Price", content ="calculating price and SE for the options of your choice"/>
+        <title> Options </title>
+
+    </head>
+
+    <body style="background-color: rgb(137, 187, 137);">
+        <h1>Options</h1>
+        <hr/>
+
+        <div class="optionInputs">
+        <form id = "form">
+            <table id="inputData">
+                <thead>
+                    <tr> Option Type:
+                        <select id="type">
+                            <option value="European">European</option>
+                            <option value="Digital">Digital</option>
+                            <option value="Asian">Asian</option>
+                            <option value="Range">Range</option>
+                            <option value="Lookback">Lookback</option>
+                            <option value="Barrier">Barrier</option>
+                        </select>
+                    </tr>
+                    <tr> Is Call?
+                        <select id="isCall">
+                            <option value ="True">True</option>
+                            <option value ="False">False</option>
+                        </select>
+                    </tr>
+                    <tr> Underlying price: <input id="udl" type="text"/></tr>
+                    <tr> Strike(K):<input id="strike" type="text"/></tr>
+                    <tr> Tenor(T):<input id="tenor" type="text"/></tr>
+                    <tr> Interest rate(r,decimal):<input id="rate" type="text"/></tr>
+                    <tr> Steps(ex:100):<input id="steps" type="text"/></tr>
+                    <tr> Trails:<input id="trails" type="text"/></tr>
+                    <tr> Barrier Value:<input id="bar" type="text"/></tr>
+                    <tr> Volatility:<input id="vol" type="text"/></tr>
+                    <tr> Digital Rebate:<input id="rebate" type="text"/></tr>
+
+                    <br>
+
+                    <tr> Choose knock type:
+                        <br> 
+                        <input id="UpOut" type="radio" name="knocktype" value="UpOut" > UpOut
+                        <br>
+                        <input id="DownOut" type="radio" name="knocktype" value="DownOut" > DownOut
+                        <br>
+                        <input id="UpIn" type="radio" name="knocktype" value="UpIn"> UpIn
+                        <br>
+                        <input id="DownIn" type="radio" name="knocktype" value="DownIn" > DownIn
+
+                    <br>
+
+                </thead>   
+                <br>
+                <div class="varianceReduction">Variance Reduction:</div>
+                    <br>                       
+                    <thead>
+                        <tr>Delta Control?
+                            <select id="deltaControl">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+    
+                            </select>
+                        </tr>  
+                        <br>
+                        <tr>Antithetic?
+                            <select id="antithetic">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+    
+                            </select>
+                        </tr> 
+                        <br>
+                        <tr>Multi-threading?
+                            <select id="multithreading">
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+    
+                            </select>
+                        </tr> 
+                    </thead>
+                
+                <br>
+            </table> 
+            <button id = "button1" class ="calcButton" type="submit">Calculate</button>       
+        
+        </form>
+            <br> 
+            
+        </div>  
+        <br>
+
+
+        <hr/>
+        <br>
+        <div class ="result" tyoe="text/css"><h3> Results:</h3> 
+            <p id="log"> </p>
+
+            <ul id="results"></ul>  
+            <table id="output" >
+                <tr>
+                    <th><output name="Optionprice" id="price" value="price">Price:?</output> </th>
+                    
+                    <th><output name="Greeks" id="delta" value="delta1">Delta:?</output> </th>
+                    
+                    <th><output name="Greeks" id="gamma" value="gamma1">Gemma:?</output> </th>
+                    
+                    <th><output name="Greeks" id="rho" value="rho1">Rho:?</output> </th>
+                    
+                    <th><output name="Greeks" id="theta" value="theta1">Theta:?</output> </th>
+                    
+                    <th><output name="Greeks" id="vega" value="vega1">Vega:?</output> </th>
+                    
+                    <th><output name="StandError" id="SE" value="SE">StandardError:?</output> </th>
+                    
+                </tr>
+
+            </table>
+
+        </div>
+
+    </body>
+
+    <script src ="index.js">
+    </script>
+
+
+    <!-- can i use fetch here??? -->
+    <!-- <script>
+        console.log('start fetch');
+
+        catchinput()
+        .then(response => {
+            console.log('finished!');
+        })
+        .catch(error => {
+            console.log('error');
+            console.error(error);
+        });
+        
+        
+        async function catchinput(){
+            const response = await fetch('http://localhost:5099/calculate');
+            const json = await response.json();
+            document.getElementById('optionType').src = URL.createObjectURL(json);
+
+        }
+
+   
+
+        
+    </script> -->
+
+
+
+
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="index.css"/>
+    </head>
+    <body>
+        <div class = "mystyle"><input id = "txtInput" style="width:150px"/>
+            
+            <div class ="parentframe">
+                <div class="upleft">left!</div>
+                <div class="downright">down right!</div>
+                <div class ="upright">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                
+
+                            </tr>
+                        </thead>
+                        
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </body>
+    <script src="index.js"></script>
+</html> -->

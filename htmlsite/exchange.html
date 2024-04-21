@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" type="text/css" href = "index.css" />
+
+    </head>
+    <body>
+        <nav class ="parentframe">
+            <div class = "navframe">
+                <ul>
+                    <li><a href="exchange.html">Exchange</a></li>
+                    <li><a href="tradingMkt.html">Trading Market</a></li>
+                    <li><a href="rate.html">Rate</a></li>
+                    <li><a href="financialInst.html">Financial Instruments</a></li>
+                    <li><a href="underlying.html">Underlying</a></li>
+                    <!-- <li><a href="histPrice.html">Historical Price</a></li> -->
+                    <li><a href="option.html">Option</a></li>
+                    <li><a href="trade.html">Trade</a></li>
+                    <li><a href="optionTradeEval.html">Option Trade Evaluation</a></li>
+                </ul>
+
+
+
+
+
+
+                <!-- <div class = "navbutton"> Historical Price</div>
+                <div class = "navbutton"> Rate</div>
+                <div class = "navbutton"> Financial Instruments</div>
+                <div class = "navbutton"> </div>
+                <div class = "navbutton"> </div> -->
+            </div>
+
+            <div class = "exchange">
+                <table id = exchange >
+                    <tr>
+                        <th> ID </th>
+                        <th> Name </th>
+                        <th> symbol </th>
+                        <th> Market </th>
+    
+            
+    
+                    </tr>
+                    <tr>
+                        <!-- those need to be input by user and save in database (ID is auto polulate)-->
+                        <td id="ex_id">01</td>
+                        <td id = "ex_name">Shanghai</td>
+                        <td id="ex_symbol">SHG</td>
+                        <td id="ex_mkt">AMEX</td>
+                        
+                    </tr>
+                    
+    
+                </table>
+<br>
+
+                <form>
+                    <label for="ex_id">exchange ID</lable>
+                    <input type="int" id="ex_id" />
+                    <label for="ex_mkt">Exchange Market </lable>
+                    <input type="text" id="ex_mkt" />
+                    <label for="ex_name">Exchange Name</lable>
+                    <input type="text" id="ex_name" />
+                    <label for="ex_symbol"> Exchange Symbol</label>
+                    <input type="text" id="ex_symbol" />
+                    <input type="submit" value="Submit">
+    
+                </form>
+
+        </nav>
+    </body>
+
+    <script> scr="index.js"</script>
+</html>

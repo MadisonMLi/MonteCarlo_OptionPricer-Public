@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" type="text/css" href = "index.css" />
+
+    </head>
+
+    <body>
+        <nav class ="parentframe">
+            <div class = "navframe">
+                <ul>
+                    <li><a href="exchange.html">Exchange</a></li>
+                    <li><a href="tradingMkt.html">Trading Market</a></li>
+                    <li><a href="rate.html">Rate</a></li>
+                    <li><a href="financialInst.html">Financial Instruments</a></li>
+                    <li><a href="underlying.html">Underlying</a></li>
+                    <!-- <li><a href="histPrice.html">Historical Price</a></li> -->
+                    <li><a href="option.html">Option</a></li>
+                    <li><a href="trade.html">Trade</a></li>
+                    <li><a href="optionTradeEval.html">Option Trade Evaluation</a></li>
+                </ul>
+            </div>
+
+
+        </nav>
+
+        <div class = "histPrice">
+            <table id = histPrice >
+                <tr>
+                    <th> ID </th>
+                    <th> Instrument ID</th>
+                    <th> Pricing Date </th>
+                    <th> Closing Price </th>
+
+        
+
+                </tr>
+                <tr>
+                    <!-- those need to be input by user and save in database (ID is auto polulate)-->
+                    <td id="his_id">01</td>
+                    <td id = "inst_id">01</td>
+                    <td id="Price_date">2/22/22</td>
+                    <td id="close_price">3.21</td>
+                    
+                </tr>
+                
+
+            </table>
+            <br>
+            
+
+            <form>
+                <label for="his_id">Historical price ID</lable>
+                <input type="double" id="his_id" />
+                <label for="inst_id">Instrumnent ID</lable>
+                <input type="double" id="inst_id" />
+                <label for="Price_date">Date </lable>
+                <input type="price date" id="Price_date" />
+                <label for="close_price">Closing Price</lable>
+                <input type="double" id="close_price" />
+                <input type="submit" value="Submit" id="sumb_price">
+
+            </form>
+
+
+    </body>
+</html>

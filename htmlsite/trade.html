@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" type="text/css" href = "index.css" />
+
+    </head>
+    <body>
+        <nav class ="parentframe">
+            <div class = "navframe">
+                <ul>
+                    <li><a href="exchange.html">Exchange</a></li>
+                    <li><a href="tradingMkt.html">Trading Market</a></li>
+                    <li><a href="rate.html">Rate</a></li>
+                    <li><a href="financialInst.html">Financial Instruments</a></li>
+                    <li><a href="underlying.html">Underlying</a></li>
+                    <!-- <li><a href="histPrice.html">Historical Price</a></li> -->
+                    <li><a href="option.html">Option</a></li>
+                    <li><a href="trade.html">Trade</a></li>
+                    <li><a href="optionTradeEval.html">Option Trade Evaluation</a></li>
+                </ul>
+
+
+
+            </div>
+        
+
+
+        </nav>
+    </body>
+
+
+    <div class = "trade">
+        <head>
+            <link rel="Calculation" type ="text/css", href="index.css"/>
+            <meta charset="UTF-8">
+            <meta name="Option Price", content ="calculating price and SE for the options of your choice"/>
+            <title> Options </title>
+    
+        </head>
+    
+        <body>
+            <h1>Trade</h1>
+            <hr/>
+            <br>
+    
+
+            <div class="optionInputs">
+                <table>
+                    <thead>
+                        <tr> Option Type:
+                            <select id="optionType">
+                                <option value="european">European</option>
+                                <option value="digital">Digital</option>
+                                <option value="asian">Asian</option>
+                                <option value="range">Range</option>
+                                <option value="lookback">Lookback</option>
+                                <option value="Barrier">Barrier</option>
+                            </select>
+                        </tr>
+                        <tr> Is Call?
+                            <select id="Call?">
+                                <option value ="True">True</option>
+                                <option value ="False">False</option>
+                            </select>
+                        </tr>
+                        <br>
+
+                        <tr> Underlying ID: <input id="udl_id" type="int"/></tr>
+                        <tr> Underlying Price<input id="udl" type="text"/></tr>
+
+                        <tr> Strike(K):<input id="strike" type="text"/></tr>
+                        <tr> Quantity:<input id="Quantity" type="text"/></tr>
+
+                        <br>
+
+                        <tr> Instrument Id <input id="inst_id" type = "int"/></tr>
+                        <tr> Financial Instrument<input id="financialInst" type="text"/></tr>
+                        <tr> Tenor(T):<input id="T" type="text"/></tr>
+                        <tr> Interest rate(r,decimal):<input id="rate" type="text"/></tr>
+                        <tr> Volatility:<input id="vol" type="text"/></tr>
+
+                        <h4>If Appreciable</h4>
+                        <tr> Barrier Value:<input id="bar" type="text"/></tr>
+                        
+                        <tr> Digital Rebate:<input id="rebate" type="text"/></tr>
+
+                        <br>
+                        <h4> Simulation Options</h4>
+                        <tr> Steps(ex:100):<input id="steps" type="text"/></tr>
+                        <tr> Trails:<input id="trails" type="text"/></tr>
+    
+                        <br>
+
+                        <tr><h4>Choose knock type:</h4> </tr> 
+                      
+                            <input type="radio" name="knocktype" value="UpOut"> UpOut
+                            <br>
+                            <input type="radio" name="knocktype" value="DownOut"> DownOut
+                            <br>
+                            <input type="radio" name="knocktype" value="UpIn"> UpIn
+                            <br>
+                            <input type="radio" name="knocktype" value="DownIn"> DownIn
+                        
+                        <tr>
+                        
+                    </thead>    
+                </table> 
+                <br> 
+                <div class="varianceReduction">
+                    <h4>Variance Reduction:</h4>
+                    <br>
+                        <table>
+                            <thead>
+                                <tr>Delta Control?
+                                    <select id="deltacontrol">
+                                        <option value="True">True</option>
+                                        <option value="False">False</option>
+            
+                                    </select>
+                                </tr>  
+                                <br>
+                                <tr>Antithetic?
+                                    <select id="Antithetic">
+                                        <option value="True">True</option>
+                                        <option value="False">False</option>
+            
+                                    </select>
+                                </tr> 
+                                <br>
+                                <tr>Multi-threading?
+                                    <select id="Multithreading?">
+                                        <option value="True">True</option>
+                                        <option value="False">False</option>
+            
+                                    </select>
+                                </tr> 
+                            </thead>
+                        </table>                        
+                    </div>    
+                
+    
+            </div>  
+            <br>
+    
+            <br>
+            <div id="button1"  class="calcButton"><button>Calculate</button>
+    
+            </div>
+    
+            <hr/>
+            <br>
+            <!-- <div class ="result" tyoe="text/css"><h3> Results:</h3> 
+                <output name="Optionprice" id="price" value="price">Price:</output>
+                <output name="Greeks" id="delta" value="delta1">Delta:</output>
+                <output name="Greeks" id="gamma" value="gamma1">Gemma:</output>
+                <output name="Greeks" id="rho" value="rho1">Rho:</output>
+                <output name="Greeks" id="theta" value="theta1">Theta:</output>
+                <output name="Greeks" id="vega" value="vega1">Vega:</output>
+                <output name="StandError" id="SE" value="SE">StandardError:</output>
+                
+    
+            
+            </div> -->
+    
+            
+    
+    
+    
+        </body>
+    
+        <script>
+            console.log('start fetch');
+    
+            catchinput()
+            .then(response => {
+                console.log('finished!');
+            })
+            .catch(error => {
+                console.log('error');
+                console.error(error);
+            });
+            
+            
+            async function catchinput(){
+                const response = await fetch('http://localhost:5099/calculate');
+                const json = await response.json();
+                document.getElementById('optionType').src = URL.createObjectURL(json);
+    
+            }
+    
+
+    
+            
+        </script>
+     
+
+
+    
+    </div>
+
+    <script> scr="trade.js"</script>
+</html>

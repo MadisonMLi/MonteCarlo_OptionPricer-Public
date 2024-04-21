@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" type="text/css" href = "index.css" />
+
+    </head>
+    <body>
+        <nav class ="parentframe">
+            <div class = "navframe">
+                <ul>
+                    <li><a href="exchange.html">Exchange</a></li>
+                    <li><a href="tradingMkt.html">Trading Market</a></li>
+                    <li><a href="rate.html">Rate</a></li>
+                    <li><a href="financialInst.html">Financial Instruments</a></li>
+                    <li><a href="underlying.html">Underlying</a></li>
+                    <!-- <li><a href="histPrice.html">Historical Price</a></li> -->
+                    <li><a href="option.html">Option</a></li>
+                    <li><a href="trade.html">Trade</a></li>
+                    <li><a href="optionTradeEval.html">Option Trade Evaluation</a></li>
+                </ul>
+
+                
+            </div>
+
+
+        </nav>
+
+
+        <div class = "optionTradeEval">
+            <table id = optionEval >
+                <tr>
+                    <th> Eval Id</th>
+                    <th> Unrealzied_PnL</th>
+                    <th> Delta </th>
+                    <th> Gamma</th>
+                    <th> Vega</th>
+                    <th> Rho </th>
+                    <th> Theta</th>
+
+                </tr>
+                <tr>
+                    <!-- those need to be input by user and save in database (ID is auto polulate)-->
+                    <td id="eval_id">01</td>
+                    <td id = "pnl">10</td>
+                    <td id="delta">0.0033</td>
+                    <td id="gamma">0.00043</td>
+                    <td id="vega">0.32</td>
+                    <td id="rho">0.043</td>
+                    <td id="theta">0.89</td>
+
+                    
+                </tr>
+                
+
+            </table>
+            <input type="button" value="Refresh Page" onClick="refresh">
+            <br>
+
+           
+    </body>
+
+    <script> scr="index.js"</script>
+</html>

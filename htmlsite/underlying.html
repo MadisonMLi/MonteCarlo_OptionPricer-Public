@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel ="stylesheet" type="text/css" href = "index.css" />
+
+    </head>
+    <body>
+        <nav class ="parentframe">
+            <div class = "navframe">
+                <ul>
+                    <li><a href="exchange.html">Exchange</a></li>
+                    <li><a href="tradingMkt.html">Trading Market</a></li>
+                    <li><a href="rate.html">Rate</a></li>
+                    <li><a href="financialInst.html">Financial Instruments</a></li>
+                    <li><a href="underlying.html">Underlying</a></li>
+                    <!-- <li><a href="histPrice.html">Historical Price</a></li> -->
+                    <li><a href="option.html">Option</a></li>
+                    <li><a href="trade.html">Trade</a></li>
+                    <li><a href="optionTradeEval.html">Option Trade Evaluation</a></li>
+                </ul>
+
+
+
+
+
+
+                
+            </div>
+            <div class = "underlying">
+                <table id = udl >
+                    <tr>
+                        <th> Underlying ID </th>
+                        <th> Undelying Price </th>
+                        <!-- <th> Exchange ID </th>
+                        <th> Market </th>
+     -->
+            
+    
+                    </tr>
+                    <tr>
+                        <!-- those need to be input by user and save in database (ID is auto polulate)-->
+                        <td id="udl_id">01</td>
+                        <td id = "udl_price"> 78.3</td>
+                        <!-- <td id="ex_id">01</td>
+                        <td id="ex_mkt">AMEX</td> -->
+                        
+                    </tr>
+                    
+    
+                </table>
+<br>
+
+                <form>
+                    <label for="udl_id">underlying ID</lable>
+                    <input type="int" id="udl_id" />
+                    <label for="udl_price">Underlying</lable>
+                    <input type="double" id="udl_price" />
+                  
+                    <input type="submit" value="Submit">
+    
+                </form>
+
+        </nav>
+    </body>
+
+    <script> scr="index.js"</script>
+</html>
